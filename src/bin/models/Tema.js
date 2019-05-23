@@ -2,20 +2,16 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const TemaSchema = new Schema({
-  name: String,
+  nombre: String,
   descripcion: String,
-  gender: String,
-  user_id: {
+
+  curso: {
     type: Schema.Types.ObjectId,
-    ref: "User"
+    ref: "Curso"
   },
-  song_id: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Song"
-    }
-  ]
+
+
 });
 
-var List = mongoose.model("List", ListSchema);
-module.exports = List;
+var Tema = mongoose.model("Tema", TemaSchema);
+module.exports = Tema;
